@@ -1,0 +1,31 @@
+@import "../../constants/background.styl"
+
+.card {
+  min-width: 170px;
+  width: 170px;
+  height: 80px;
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  position: relative;
+  margin: 10px 10px 10px 0;
+
+  &__title {
+    font-size: 1.2rem;
+  }
+
+  &__description {
+    font-size: .8rem;
+    font-weight: 300;
+    position: absolute;
+    bottom: 25px;
+  }
+
+  {background}
+
+  &.exam {
+    background: #eae7e2;
+    color: #000;
+    margin-bottom: 50px;
+  }
+}

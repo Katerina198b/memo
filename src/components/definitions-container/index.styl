@@ -1,0 +1,57 @@
+@import "../../constants/background.styl"
+
+.definitions-container {
+
+  &__definitions {
+    margin: -15px 20px 0 20px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    position: relative;
+    color: white;
+    height: 125px;
+    padding: 40px 20px 0 30px;
+    {background}
+
+    &:before {
+      content: '';
+      background: #fff;
+      left: 0;
+      height: 5px;
+      border-radius: 30px;
+      position: absolute;
+      top: 116px;
+      right: 0;
+      width: 90px;
+      margin: auto;
+      box-shadow: 0 0 1px rgba(0,0,0,0.2);
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      content: '';
+      bottom: -45px;
+      height: 80px;
+      border-top-left-radius: 45px;
+      border-top-right-radius: 45px;
+      background: #fff;
+      box-shadow: 1 0 1px rgba(0,0,0,0.2);
+    }
+  }
+
+  &__link {
+    font-size: 1rem;
+    color: #ffffffcf;
+    text-align: right;
+    min-width: 110px;
+    text-decoration: underline;
+  }
+  &__link:hover, &__link:active {
+    text-decoration: underline;
+  }
+}

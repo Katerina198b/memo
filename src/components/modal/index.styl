@@ -1,0 +1,51 @@
+.modal {
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: z-index linear .1s .3s, max-height linear 0s .5s, opacity linear .2s .1s;
+  max-height: 0;
+  z-index: -1;
+  opacity: 0;
+
+  &_active {
+    max-height: 100%;
+    z-index: 1;
+    transition: z-index linear 0s, max-height 0s, opacity 0s;
+    opacity: 1;
+  }
+
+  &_active &__body {
+    top: -40px;
+    transition: top cubic-bezier(.17,.67,.62,1) .7s;
+  }
+
+  &__body {
+    transition: top cubic-bezier(.17,.67,.62,1) .5s;
+    background: white;
+    position: relative;
+    border-radius: 40px 40px 0 0;
+    padding: 80px 30px 30px 30px;
+    top: calc(100% + 50px);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    max-height: inherit;
+    bottom: 0;
+    height: calc(100% - 75px);
+
+    &:before {
+      content: '';
+      background: #fff;
+      left: 0;
+      height: 5px;
+      border-radius: 30px;
+      position: absolute;
+      top: -12px;
+      right: 0;
+      width: 90px;
+      margin: auto;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+  }
+}

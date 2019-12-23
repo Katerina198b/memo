@@ -1,0 +1,32 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}
+</style>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="71.7078" y1="90.1044" x2="136.3922" y2="90.1044">
+		<stop  offset="0" style="stop-color:#5257E3"/>
+		<stop  offset="1" style="stop-color:#FA999C"/>
+	</linearGradient>
+	<path class="st0" d="M96.4,146c-1.9,0-3.8-0.2-5.7-0.7c-13.3-3.2-21.5-16.6-18.3-30l15-62.1c3.2-13.3,16.6-21.5,30-18.3
+		c13.3,3.2,21.5,16.6,18.3,30l-15,62.1C118,138.4,107.7,146.1,96.4,146z"/>
+</g>
+<g>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="116.5078" y1="110.5544" x2="183.7922" y2="110.5544">
+		<stop  offset="0" style="stop-color:#FB939E"/>
+		<stop  offset="1" style="stop-color:#FCC58B"/>
+	</linearGradient>
+	<path class="st1" d="M141.2,172c-1.9,0-3.8-0.2-5.7-0.7c-13.3-3.2-21.5-16.6-18.3-30l17.6-73.2c3.2-13.3,16.6-21.5,30-18.3
+		c13.3,3.2,21.5,16.6,18.3,30L165.5,153C162.7,164.5,152.5,172.1,141.2,172z"/>
+</g>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="14.3078" y1="98.2039" x2="87.7922" y2="98.2039">
+	<stop  offset="0" style="stop-color:#25288C"/>
+	<stop  offset="0.1967" style="stop-color:#323698"/>
+	<stop  offset="0.5652" style="stop-color:#5359B7"/>
+	<stop  offset="1" style="stop-color:#818BE3"/>
+</linearGradient>
+<path class="st2" d="M68.8,24.8c-13.3-3.2-26.8,5-30,18.3L15,141.6c-3.2,13.3,5,26.8,18.3,30c2,0.5,3.9,0.7,5.9,0.7
+	c11.2,0,21.4-7.6,24.1-19l23.8-98.4C90.3,41.5,82.1,28,68.8,24.8z"/>
+</svg>

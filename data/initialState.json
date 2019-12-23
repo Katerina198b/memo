@@ -1,0 +1,5 @@
+{
+  "colors":[
+    {
+      "id":"a5685c39-6bdc-4727-9188-6c9a00bf7f95",
+      "title":"Party Pink","color":"#ff00f7","rating":4,"timestamp":"Wed Mar 9 2016 03:26:00 GMT-0800 (PST)"},{"id":"b3e5b63c-d203-4970-a5a3-4772ce3ec997","title":"jet","color":"#000000","timestamp":"Thu Sep 22 2016 17:17:40 GMT-0700 (PDT)","rating":3},{"id":"5497b890-fd33-49ef-8828-82577b6fb1c7","title":"grey","color":"#eeeeee","timestamp":"Sun Dec 15 2019 00:05:35 GMT+0300 (MSK)","rating":0},{"id":"9b7b460b-800b-42b5-9c99-768ad5d9d9a5","title":"h","color":"444","timestamp":"Sun Dec 15 2019 00:09:06 GMT+0300 (MSK)","rating":0}]}

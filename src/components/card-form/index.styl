@@ -1,0 +1,128 @@
+.form {
+  &__title {
+    margin: 10px 0;
+    font-size: 1.8rem;
+  }
+
+  &__color-container {
+    display: flex;
+    margin: 10px -5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .color {
+    margin: 5px;
+  }
+
+  input {
+    border-radius: 5px;
+    line-height: 2rem;
+    border: 2px solid #d6d6d6;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  label {
+    position: relative;
+    bottom: -6px;
+    font-size: 1rem;
+    opacity: .8;
+    font-weight: 300;
+    display: block;
+  }
+
+  .file-upload .file-select{
+    display: block;
+    border: 2px solid #d6d6d6;
+    height: 2rem;
+    text-overflow: ellipsis;
+    position: relative;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .file-upload .file-select .file-select-button{
+    padding: 0 10px;
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    margin: auto;
+    background: #b3ccff;
+  }
+
+  .file-upload .file-select .file-select-name{
+    line-height:2rem;
+    display:inline-block;
+    padding:0 10px;
+  }
+
+  .file-upload .file-select:hover{
+    border-color:#34495e;
+    transition:all .2s ease-in-out;
+  }
+
+  .file-upload .file-select:hover .file-select-button{
+    background:#34495e;
+    transition:all .2s ease-in-out;
+  }
+
+  .file-upload.active .file-select{
+    border-color:#3fa46a;
+    transition:all .2s ease-in-out;
+  }
+
+  .file-upload.active .file-select .file-select-button{
+    background:#3fa46a;
+    color:#FFFFFF;
+    transition:all .2s ease-in-out;
+  }
+
+  .file-upload .file-select input[type=file]{
+    z-index:100;
+    cursor:pointer;
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    opacity:0;
+  }
+
+  .file-upload .file-select.file-select-disabled{
+    opacity:0.65;
+  }
+
+  .file-upload .file-select.file-select-disabled:hover{
+    display:block;
+    border: 2px solid #dce4ec;
+    color: #34495e;
+    cursor:pointer;
+    height:40px;
+    line-height:40px;
+    margin-top:5px;
+    text-align:left;
+    background:#FFFFFF;
+    overflow:hidden;
+    position:relative;
+  }
+
+  .file-upload .file-select.file-select-disabled:hover .file-select-button{
+    background:#dce4ec;
+    color:#666666;
+    padding:0 10px;
+    display:inline-block;
+    height:40px;
+    line-height:40px;
+  }
+
+  .file-upload .file-select.file-select-disabled:hover .file-select-name{
+    line-height:40px;
+    display:inline-block;
+    padding:0 10px;
+  }
+
+}

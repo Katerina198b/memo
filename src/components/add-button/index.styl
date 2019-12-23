@@ -1,0 +1,72 @@
+.add-button {
+  --front: #b0daff;
+  --back: #eae7e2;
+  --icon: white;
+  perspective: 600px;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  cursor: pointer;
+  input {
+    display: none;
+    & + div {
+      span {
+        --rotateY: 0deg;
+        --background: var(--front);
+        transform: rotateX(var(--rotateY));
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: var(--background);
+        backface-visibility: hidden;
+        transition: transform .6s cubic-bezier(.2, .64, .48, 1.24);
+        &:before,
+        &:after {
+          --rotate: 0deg;
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 2px;
+          border-radius: 1px;
+          top: 50%;
+          left: 50%;
+          background: var(--icon);
+          backface-visibility: hidden;
+          transform: translate(-50%, -50%) rotate(var(--rotate)) translateZ(6px);
+        }
+        &:first-child {
+          --background: var(--back);
+          &:before {
+            --rotate: -45deg;
+          }
+          &:after {
+            --rotate: 45deg;
+          }
+        }
+        &:last-child {
+          --rotateY: -180deg;
+          &:before {
+            --rotate: 0deg;
+          }
+          &:after {
+            --rotate: 90deg;
+          }
+        }
+      }
+    }
+    &:checked + div {
+      span {
+        &:first-child {
+          --rotateY: 180deg;
+        }
+        &:last-child {
+          --rotateY: 0deg;
+        }
+      }
+    }
+  }
+}
