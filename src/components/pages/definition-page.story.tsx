@@ -1,18 +1,18 @@
 import React, {ReactElement} from "react";
 import {storiesOf} from '@storybook/react';
 
-import {cards} from '../card/card.mock';
+import {definitions} from '../definition/definition.mock';
 
 import {MenuEnum} from "../menu";
 import './index.styl';
-import {StartPage} from "./start-page";
+import {DefinitionPage} from "./definition-page";
 
-const stories = storiesOf('StartPage', module);
+const stories = storiesOf('DefinitionPage', module);
 
 stories.add('default', (): ReactElement => (
-    <StartPage
+    <DefinitionPage
         userName={'Katerina'}
-        cards={cards}
+        definition={definitions[0]}
         activeMenu={MenuEnum.download}
     />
 ));

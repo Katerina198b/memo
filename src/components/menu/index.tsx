@@ -13,6 +13,7 @@ import Profile from './svg/profile.svg?inline';
 
 
 import './index.styl';
+import {NavLink} from "react-router-dom";
 
 
 const b = cn('menu');
@@ -47,30 +48,36 @@ export const Menu = ({activeMenu}: Menu) => {
             </>
         </Modal>
         <div className={b()}>
-            <svg viewBox={Home.viewBox}
-                 className={b('item', {active: activeMenu === MenuEnum.home})}
+            <NavLink exact to={'/'}
+                     className={b('item')} activeClassName={b('item', {active: true})}
             >
-                <use xlinkHref={`#${Home.id}`} />
-            </svg>
-            <svg viewBox={Learn.viewBox}
-                className={b('item', {active: activeMenu === MenuEnum.learn})}
+                <svg viewBox={Home.viewBox}>
+                    <use xlinkHref={`#${Home.id}`} />
+                </svg>
+            </NavLink>
+            <NavLink to={'/exams/add'}
+                     className={b('item')} activeClassName={b('item', {active: true})}
             >
-                <use xlinkHref={`#${Learn.id}`} />
-            </svg>
+                <svg viewBox={Learn.viewBox}>
+                    <use xlinkHref={`#${Learn.id}`} />
+                </svg>
+            </NavLink>
             <AddButton
                 active={active}
                 onClick={onAddButtonClick}
             />
-            <svg viewBox={Check.viewBox}
-                 className={b('item', {active: activeMenu === MenuEnum.check})}
+            <NavLink to={'/definitions/all'} className={b('item')} activeClassName={b('item', {active: true})}>
+                <svg viewBox={Check.viewBox}>
+                    <use xlinkHref={`#${Check.id}`} />
+                </svg>
+            </NavLink>
+            <NavLink to={'/user'}
+                     className={b('item')} activeClassName={b('item', {active: true})}
             >
-                <use xlinkHref={`#${Check.id}`} />
-            </svg>
-            <svg viewBox={Profile.viewBox}
-                 className={b('item', {active: activeMenu === MenuEnum.profile})}
-            >
-                <use xlinkHref={`#${Profile.id}`} />
-            </svg>
+                <svg viewBox={Profile.viewBox}>
+                    <use xlinkHref={`#${Profile.id}`} />
+                </svg>
+            </NavLink>
         </div>
     </>
    )

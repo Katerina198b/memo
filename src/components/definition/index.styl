@@ -22,7 +22,6 @@ level = @block {
 
 .definition {
   padding: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   height: 55px;
   display: flex;
   justify-content: space-between;
@@ -30,12 +29,14 @@ level = @block {
   position: relative;
   align-items: center;
 
-  &__name {
+  &__title {
     font-size: 1rem;
     word-break: keep-all;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    color: black;
+    text-transform: capitalize;
   }
 
   &__time {

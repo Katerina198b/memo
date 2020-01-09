@@ -7,24 +7,50 @@ import './index.styl';
 
 const b = cn('cards-container');
 
+export enum CardType {
+    exams = 'exams',
+    default = 'default',
+}
+
+
 interface CardsContainerProps {
     cards: Card[];
     containerName: string;
     onLinkClick: () => void;
     className?: string;
+    type: CardType
 }
 
 export const CardsContainer = ({
     cards,
     containerName,
     onLinkClick,
+    type,
     className = '',
 }: CardsContainerProps) => {
-    const allCard = cards.reduce((allCard, card) => {
-        allCard.count += card.count;
-        allCard.time += card.time;
-        return allCard;
-    }, emptyCard);
+
+    const DopCard = () => {
+        switch (type) {
+            case CardType.default: {
+                const allCard = cards.reduce((allCard, card) => {
+                    allCard.count += card.count;
+                    allCard.time += card.time;
+                    allCard.progress += (card.progress / cards.length);
+                    return allCard;
+                }, emptyCard);
+
+                return(
+                    <Card key={allCard.id}
+                          {...allCard}
+                          className={className}
+                    />
+                )
+            }
+            case CardType.exams: {
+                return(null)
+            }
+        }
+    };
 
     return(
         <div className={b()}>
@@ -43,12 +69,10 @@ export const CardsContainer = ({
                         {...card}
                         key={card.id}
                         className={className}
+                        type={type}
                     />
                 ))}
-                <Card key={allCard.id}
-                    {...allCard}
-                    className={className}
-                />
+                {DopCard()}
             </div>
         </div>
     )

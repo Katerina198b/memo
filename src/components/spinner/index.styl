@@ -1,0 +1,42 @@
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-box {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  border: 6px solid #cee5fa;
+  border-radius: 50%;
+  margin: 50px auto;
+}
+
+.circle-border {
+  width: 150px;
+  height: 150px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63,249,220);
+  background: linear-gradient(0deg, rgba(63, 249, 220, 0.29) 33%, #4a80f0 100%)
+  animation: spin 6s linear infinite;
+}
+
+.circle-core {
+  width: 145px;
+  height: 145px;
+  background: linear-gradient(to right, #f7f9ff, #f0f4ff);
+  border-radius: 50%;
+  position: absolute;
+}

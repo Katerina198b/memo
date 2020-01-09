@@ -2,8 +2,8 @@ import express from 'express'
 import path from 'path'
 import bodyParser from 'body-parser'
 import fs from 'fs'
-import { compose } from 'redux'
-import storeFactory from '../store'
+import {compose} from 'redux'
+import {storeFactory} from '../store'
 import initialState from '../../data/initialState.json'
 
 global.url = '';

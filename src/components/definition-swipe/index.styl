@@ -1,0 +1,51 @@
+.swipe {
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: -20px;
+
+  &__direction {
+    height: 50px;
+    position: relative;
+  }
+
+  &_left &__direction {
+    left: 20px;
+    //animation: swipe-left 1s infinite;
+  }
+
+  &_right &__direction {
+    right: 20px;
+    position: absolute;
+    transform: rotate(180deg);
+  }
+
+  &_right {
+    left: 50%;
+  }
+
+  @keyframes swipe-left {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: 15px;
+      transform: scale(.8);
+    }
+  }
+
+  @keyframes swipe-right {
+    0% {
+        opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      right: 15px;
+      transform: rotate(180deg), scale(.8);
+    }
+  }
+
+}

@@ -1,17 +1,33 @@
 @import "../../constants/background.styl"
 
+.card .card__progress {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 .card {
   min-width: 170px;
   width: 170px;
   height: 80px;
   border-radius: 20px;
   padding: 25px;
-  color: white;
   position: relative;
   margin: 10px 10px 10px 0;
+  text-decoration: none;
+
+  &_color_white {
+    color: white;
+  }
+  &_color_black {
+    color: black;
+  }
 
   &__title {
     font-size: 1.2rem;
+    display: block;
+    max-width: 130px;
+    text-transform: capitalize;
   }
 
   &__description {

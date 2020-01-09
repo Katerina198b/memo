@@ -28,10 +28,9 @@ const middleware = server => [
     thunk
 ];
 
-const storeFactory = (server = false, initialState = {}) =>
+export const storeFactory = (server = false, initialState = {}) =>
     applyMiddleware(...middleware(server))(createStore)(
         combineReducers({colors}),
         initialState
     );
 
-export default storeFactory

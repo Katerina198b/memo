@@ -1,0 +1,49 @@
+.progress
+  size = 35px
+  border-active = 4px solid #d0ffc4
+  border-base = 4px solid rgba(255, 255, 255, .5);
+  width: size;
+  height: size;
+  position: relative;
+
+  &__percent
+    font-size: .25 * size;
+
+  &__done
+    width: 100%;
+    height: 100%;
+    left: -4px;
+    top: -6px;
+    position: relative;
+    fill: white;
+
+  &__label
+    position: absolute;
+    font-size: .37 * size;
+    top: .29 * size;
+    left: .2 * size;
+    font-weight: bold;
+
+  & *
+    box-sizing: border-box
+
+  &__empty
+    width: 100%
+    height: 100%
+    border: border-base
+    border-radius: 50%
+    box-shadow: 0 0 2px #e0f0ff;
+
+  &__base
+    width: 100%
+    height: 100%
+    clip: rect(0, size, size, size / 2)
+    position: absolute
+
+  &__left, &__right
+    width: 100%
+    height: 100%
+    border: border-active
+    border-radius: 50%
+    clip: rect(0, size / 2, size, 0)
+    position: absolute

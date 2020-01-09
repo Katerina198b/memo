@@ -1,15 +1,15 @@
 import React, {ReactElement} from 'react';
 import {storiesOf} from '@storybook/react';
 import {CardsContainer} from './index';
-import {cards} from "../card/card.mock";
 
 import '../../constants/common.styl';
+import {initialState} from "../../../data/initialState";
 
 const stories = storiesOf('Cards', module);
 
 stories.add('Cards', (): ReactElement => (
     <CardsContainer
-        cards={cards}
+        cards={initialState.cards}
         containerName={'Наборы'}
     />
 ));

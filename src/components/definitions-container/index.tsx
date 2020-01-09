@@ -9,17 +9,15 @@ import './index.styl';
 const b = cn('definitions-container');
 
 interface DefinitionsContainerProps {
-    definitions: Definition[];
     card: Card;
     onClick: () => void;
 }
 
 export const DefinitionsContainer = ({
-    definitions,
     card,
     onClick,
 }: DefinitionsContainerProps) => {
-
+    console.log('card', card);
     const [checkedCards, setCheckedCards] = useState(new Set());
 
     const handleClick = (id: string) => {
@@ -34,9 +32,12 @@ export const DefinitionsContainer = ({
     };
 
     return(
-        <div className={b()}>
+        <div className={b({color: card.color})}>
             <div className={b('title', {background: card.background})}>
-                <h1>{card.title}</h1>
+                <div className={b('info')}>
+                    <h1>{card.title}</h1>
+                    <div className={b('about')}>выучено на {card.progress}%, {card.count} понятий</div>
+                </div>
                 <div className={b('link')}
                      onClick={onClick}
                 >
@@ -44,7 +45,7 @@ export const DefinitionsContainer = ({
                 </div>
             </div>
             <div className={b('definitions')}>
-                {definitions.map((el) => (
+                {card.definitions.map((el) => (
                     <Definition {...el} key={el.id}
                                 onClick={handleClick}
                     />

@@ -13,7 +13,7 @@ export enum DefinitionLevel {
 }
 
 export interface Definition {
-    name: string;
+    title: string;
     description: string;
     time: number;
     level: DefinitionLevel;
@@ -27,7 +27,7 @@ interface DefinitionProps extends Definition{
 const b = cn('definition');
 
 export const Definition = ({
-    name,
+    title,
     time,
     level,
     onClick,
@@ -45,7 +45,7 @@ export const Definition = ({
              onClick={handleClick}
         >
             <div className={b('title')}>
-                <div className={b('name')}>{name}</div>
+                <div className={b('name')}>{title}</div>
                 <div className={b('time')}>Время тренировок: {time} min</div>
             </div>
             <div className={b('level', {level: time === 0 ? DefinitionLevel.default : level})}/>

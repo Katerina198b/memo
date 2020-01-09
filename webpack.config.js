@@ -94,12 +94,19 @@ const fontRule = {
 };
 
 module.exports = {
-    entry: isSSR? "./src/index.ssr.js" : "./src/index.js" ,
+    entry: isSSR? "./src/index.ssr.js" : "./src/index.tsx",
     output: {
         path: isSSR? path.join(__dirname, "dist/server") : path.join(__dirname, "dist/assets"),
         filename: "bundle.js",
-        publicPath: "assets",
-        sourceMapFilename: "bundle.map"
+        publicPath: "/",
+        //sourceMapFilename: "bundle.map"
+    },
+    devServer: {
+        contentBase: path.join(__dirname, "."),
+        compress: true,
+        port: 9000,
+        publicPath: '/',
+        hot: true,
     },
     devtool: "#source-map",
     resolve: {
