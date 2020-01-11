@@ -4,7 +4,7 @@ import {AddButton} from "../add-button";
 import {Modal} from "../modal";
 import {CardForm} from '../card-form';
 import {ModalNavigator} from "../modal-navigator";
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 
 import Home from './svg/home.svg?inline';
 import Check from './svg/check.svg?inline';

@@ -1,21 +1,67 @@
 import React from "react";
-import './index.styl';
 import {connect} from "react-redux";
-import {DefinitionsContainer} from "../definitions-container";
-import {Definition} from "../definition";
-import {Card} from "../card";
+import {Header} from "components/header";
+import {Timer} from "components/timer";
+import {Direction, SwipeDefinition} from "components/definition-swipe";
 
-interface DefinitionsContainerProps {
-    definitions: Definition[];
-    card: Card;
-    onClick: () => void;
+import {cn} from 'lib/classname';
+
+import './index.styl';
+
+interface DefinitionPageViewer {
+    current: number;
+    selected: string[];
+    history: any;
+    id: string;
 }
 
+const b = cn('page');
+
+const DefinitionPageViewer = ({
+    selected,
+    current,
+    history,
+    id,
+}: DefinitionPageViewer) => {
+
+    const swipeLeft = () => {
+        if (current < selected.length) {
+            history.push(`/card/${id}/train/${current + 1}`);
+        }
+    };
+
+    const swipeRight = () => {
+        if (current < selected.length) {
+            history.push(`/card/${id}/train/${current + 1}`);
+        }
+    };
+
+    console.log(current, history);
+
+    return (
+        <>
+            <div className={b({type: 'definition'})}>
+                <Header
+                    withBack
+                    title={'Учим'}
+                    onClose={() => {
+                    }}
+                />
+                <h1 className={b('title')}>{selected[current].title}</h1>
+                <SwipeDefinition direction={Direction.left} onClick={swipeLeft} />
+                <SwipeDefinition direction={Direction.right} onClick={swipeRight} />
+                <Timer id={selected[current].id}/>
+            </div>
+        </>
+    );
+};
+
 export const DefinitionPage = connect(
-    ({cards}, router) => {
-        console.log(router.match.params.id, cards[0].id);
-        return {card: cards.find((card) => card.id === router.match.params.id)}
-    }
-    , () => {},
-)(DefinitionsContainer);
+    ({user: {userName}, cards, exams}, {match}) => {
+        const card = cards.find((card) => card.id === match.params.id);
+        const selected = card.definitions.filter((item) => card.selected.some((id) => id === item.id));
+        return {selected, current: Number(match.params.current), id: card.id};
+    },
+    () => {},
+)(DefinitionPageViewer);
 

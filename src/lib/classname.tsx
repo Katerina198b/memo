@@ -1,5 +1,5 @@
 export function cn(name: string) {
-    return function (): string {
+    return function (...args: any): string {
         let elName = name;
         let classnames: string[] = [];
         classnames.push(name);

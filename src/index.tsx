@@ -1,15 +1,16 @@
 import React from 'react'
-import { hydrate, render } from 'react-dom'
-import { Provider } from 'react-redux'
+import {hydrate} from 'react-dom'
+import {Provider} from 'react-redux'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import {storeFactory} from './store'
-import './constants/common.styl'
 import {Menu, MenuEnum} from "./components/menu";
-import {cn} from "../lib/classname";
-import {StartPage} from "./components/pages/start-page";
-import {initialState} from '../data/initialState'
+import {cn} from "lib/classname";
+import {StartPage} from "components/pages/start-page";
+import {initialState} from 'data/initialState'
 import {createStore} from "redux";
-import {DefinitionPage} from "./components/pages/definition-page";
+import {CardPage} from "components/pages/card-page";
+import {DefinitionPage} from "components/pages/definition-page";
+
+import './constants/common.styl'
 
 const store = createStore(() => initialState, initialState);
 
@@ -26,14 +27,14 @@ There are no guarantees that attribute differences will be patched up in case of
 This is important for performance reasons because in most apps, mismatches are rare,
 and so validating all markup would be prohibitively expensive.
  */
-render(
+hydrate(
     <div className={b()}>
         <Provider store={store}>
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={StartPage} />
-                    <Route path="/card/:id" component={DefinitionPage} />
-                    <Route path="/definition/:id" component={DefinitionPage} />
+                    <Route exact path="/card/:id" component={CardPage} />
+                    <Route exact path="/card/:id/train/:current" component={DefinitionPage} />
                 </Switch>
                 <Menu
                     activeMenu={MenuEnum.download}

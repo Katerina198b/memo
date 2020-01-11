@@ -1,6 +1,6 @@
 import React, {ReactElement} from "react";
 import {storiesOf} from '@storybook/react';
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 
 import {Card} from "../card";
 import {Header, HeaderWithLogo} from "../header";

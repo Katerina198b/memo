@@ -1,5 +1,5 @@
 import React from 'react';
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 import {CardBackground} from "../card";
 import Check from './check.svg?inline';
 

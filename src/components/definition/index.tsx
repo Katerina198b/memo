@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 import {Checkbox} from "../checkbox";
 
 import './index.styl';
@@ -18,6 +18,7 @@ export interface Definition {
     time: number;
     level: DefinitionLevel;
     id: string;
+    checked: boolean;
 }
 
 interface DefinitionProps extends Definition{
@@ -32,6 +33,7 @@ export const Definition = ({
     level,
     onClick,
     id,
+    checked,
 }: DefinitionProps) => {
 
     const [active, setActive] = useState(false);
@@ -52,7 +54,7 @@ export const Definition = ({
             <Checkbox
                 className={b('check')}
                 onClick={handleClick}
-                active={active}
+                checked={checked}
             />
         </div>
     )

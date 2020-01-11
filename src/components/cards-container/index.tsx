@@ -1,9 +1,10 @@
 import React from 'react';
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 import {Card} from '../card';
 import {emptyCard} from '../card/card.mock';
 
 import './index.styl';
+import {ExamAddCard} from '../card/exam-add-card';
 
 const b = cn('cards-container');
 
@@ -47,7 +48,9 @@ export const CardsContainer = ({
                 )
             }
             case CardType.exams: {
-                return(null)
+                return(
+                    <ExamAddCard />
+                )
             }
         }
     };

@@ -48,7 +48,8 @@ export const initialState = {
           "level": "bad",
           "id": "5"
         }
-      ]
+      ],
+      "selected": ["1", "2", "3"]
     },
     {
       "count": 12,
@@ -101,7 +102,8 @@ export const initialState = {
           "level": "bad",
           "id": "5"
         }
-      ]
+      ],
+      "selected": ["1", "4", "5"]
     },
     {
       "count": 55,
@@ -133,7 +135,8 @@ export const initialState = {
           "level": "good",
           "id": "3"
         }
-      ]
+      ],
+      "selected": ["1", "3"]
     },
     {
       "count": 10,

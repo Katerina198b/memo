@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 
 import {CardsContainer, CardType} from "../cards-container";
 import {Card} from "../card";

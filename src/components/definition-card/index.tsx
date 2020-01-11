@@ -1,5 +1,5 @@
 import React from 'react';
-import {cn} from "../../../lib/classname";
+import {cn} from "../../lib/classname";
 import {Definition} from "../definition";
 
 import './index.styl';

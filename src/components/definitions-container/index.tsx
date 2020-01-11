@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 
 import {Definition} from "../definition";
 import {Card} from '../card';
 
 import './index.styl';
+import {Link} from 'react-router-dom';
 
 const b = cn('definitions-container');
 
@@ -17,7 +18,7 @@ export const DefinitionsContainer = ({
     card,
     onClick,
 }: DefinitionsContainerProps) => {
-    console.log('card', card);
+    console.log('card', card.selected);
     const [checkedCards, setCheckedCards] = useState(new Set());
 
     const handleClick = (id: string) => {
@@ -38,16 +39,18 @@ export const DefinitionsContainer = ({
                     <h1>{card.title}</h1>
                     <div className={b('about')}>выучено на {card.progress}%, {card.count} понятий</div>
                 </div>
-                <div className={b('link')}
+                <Link className={b('link')}
                      onClick={onClick}
+                     to={`/card/${card.id}/train/0`}
                 >
                     {checkedCards.size === 0 ? 'Тренировать все' : 'Тренировать выбранное'}
-                </div>
+                </Link>
             </div>
             <div className={b('definitions')}>
                 {card.definitions.map((el) => (
                     <Definition {...el} key={el.id}
                                 onClick={handleClick}
+                                checked={card.selected.some((id) => id === el.id)}
                     />
                 ))}
             </div>

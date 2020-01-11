@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import fs from 'fs'
 import {compose} from 'redux'
 import {storeFactory} from '../store'
-import initialState from '../../data/initialState.json'
+import initialState from '../data/initialState.json'
 
 global.url = '';
 global.window = {navigator: {}};

@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {Card, TextColor} from './index';
 
 import '../../constants/common.styl';
-import {initialState} from "../../../data/initialState";
+import {initialState} from "../../data/initialState";
 
 const stories = storiesOf('Card', module);
 

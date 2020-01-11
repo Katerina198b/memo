@@ -1,4 +1,4 @@
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 import {Icon, IconType} from '../icon';
 import React from 'react';
 

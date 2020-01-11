@@ -1,5 +1,5 @@
 import React, {CSSProperties} from 'react';
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 import Check from './svg/check-done.svg?inline';
 
 import './index.styl';

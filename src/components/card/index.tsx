@@ -1,5 +1,5 @@
 import React from 'react';
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 
 import './index.styl';
 import {Progress} from "../progress";
@@ -34,6 +34,7 @@ export interface Card {
     progress?: number;
     type: CardType;
     definitions: Definition[];
+    selected: string[];
 }
 
 export const Card = ({
@@ -55,7 +56,7 @@ export const Card = ({
         }
         <h1 className={b('title')}>{title}</h1>
         <div className={b('description')}>
-            {count} определений!!! {time === undefined ? null : `| ${time} min`}
+            {count} определений {time === undefined ? null : `| ${time} min`}
         </div>
     </Link>
 );

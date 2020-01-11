@@ -98,19 +98,20 @@ module.exports = {
     output: {
         path: isSSR? path.join(__dirname, "dist/server") : path.join(__dirname, "dist/assets"),
         filename: "bundle.js",
-        publicPath: "/",
+        //publicPath: "/",
         //sourceMapFilename: "bundle.map"
     },
     devServer: {
-        contentBase: path.join(__dirname, "."),
-        compress: true,
+        //compress: true,
         port: 9000,
-        publicPath: '/',
         hot: true,
+        historyApiFallback: true,
+        https: true
     },
     devtool: "#source-map",
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json'],
+        modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
     module: {
         rules: [babelRule, stylusRule, imagesRule, fontRule, svgImagesRule],
@@ -133,5 +134,5 @@ module.exports = {
             cssProcessorOptions: {discardComments: {removeAll: true}},
             canPrint: true
         }),
-    ]
+    ],
 };

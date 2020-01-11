@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {cn} from '../../../lib/classname';
+import {cn} from '../../lib/classname';
 
 import {Card, CardBackground} from "../card";
 import {Color} from "../color";

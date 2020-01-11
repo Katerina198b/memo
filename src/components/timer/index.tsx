@@ -1,13 +1,20 @@
-import React, {memo, useEffect, useState} from 'react';
-import {cn} from "../../../lib/classname";
-import {Definition} from "../definition";
+import React, {memo, useEffect, useState, useRef} from 'react';
+import {Spinner} from 'components/spinner';
+
+import {cn} from "lib/classname";
 
 import './index.styl';
-import {Spinner} from '../spinner';
 
 const b = cn('timer');
 
-function useTimer() {
+interface Time {
+    minutes: number;
+    seconds: number;
+}
+
+function useTimer(id: string) {
+
+    const timerId = useRef(null);
     const [timer, setTimer] = useState<string>('');
     const getCurrentTime = (i: number) => () => i++;
 
@@ -16,45 +23,55 @@ function useTimer() {
         seconds: timer % 60
     });
 
-    const formatClock = format => time =>
-        format.replace("mm", time.minutes).replace("ss", time.seconds);
+    const formatClock = (format: string) => (time: Time) =>
+        format.replace("mm", String(time.minutes)).replace("ss", String(time.seconds));
 
-    const prependZero = key => clockTime => ({
+    const prependZero = (key: keyof Time) => (clockTime: Time) => ({
         ...clockTime,
         [key]: (clockTime[key] < 10) ?
             "0" + clockTime[key] :
             clockTime[key]
     });
 
-    const compose = (...fns) => (arg) =>
+    const compose = (...fns: Function[]) => (arg: any) =>
         fns.reduce(
             (composed, f) => f(composed),
             arg
         );
 
-    const doubleDigits = civilianTime =>
+    const doubleDigits = (civilianTime: Time) =>
         compose(
             prependZero("minutes"),
             prependZero("seconds")
         )(civilianTime);
 
-    const startTicking = (start: number) => setInterval(
-        compose(
-            getCurrentTime(0),
-            abstractClockTime,
-            doubleDigits,
-            formatClock("mm:ss"),
-            setTimer
-        ),
-        1000
-    );
+    const startTicking = () => {
+        clearInterval(timerId.current);
+        setTimer('00:00');
+        timerId.current = setInterval(
+            compose(
+                getCurrentTime(1),
+                abstractClockTime,
+                doubleDigits,
+                formatClock("mm:ss"),
+                setTimer
+            ),
+            1000
+        );
 
-    useEffect(() => startTicking(0), []);
-    return timer;
+    };
+
+    useEffect(() => startTicking(), [id]);
+    return [timer, setTimer];
 }
 
-export const Timer = memo(() => {
-    const timer = useTimer();
+interface Timer {
+    id: string;
+}
+
+export const Timer = memo(({id}: Timer) => {
+    const [timer] = useTimer(id);
+
     return(
         <Spinner>
             <div className={b()}>{timer}</div>
