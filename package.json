@@ -54,7 +54,7 @@
     "autoprefixer": "^9.7.3",
     "bem-cn": "^3.0.1",
     "body-parser": "1.18.2",
-    "express": "4.15.5",
+    "express": "4.17.3",
     "history": "^4.10.1",
     "httpster": "1.0.3",
     "ignore-styles": "5.0.1",
